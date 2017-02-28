@@ -11,12 +11,15 @@ print('''
 number = random.randint(1, 100)
 guess = int(input('Enter your guess: '))
 count = 1
-while guess != number:
+while guess != number and count < 5:
     if guess > number:
         print('I\'m thinking of a lower number.')
     else:
         print('I\'m thinking of a higher number.')
     guess = int(input('Enter your next guess: '))
     count += 1
-print('You won!')
-print('It took you ', count, 'guesses.')
+if guess == number:
+    print('You won!')
+    print('It took you ', count, 'guesses.')
+else:
+    print('You loose. Ran out of guesses.')
